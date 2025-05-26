@@ -2,6 +2,7 @@
 import { ShoppingBag, Search, Menu } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { setIsCartOpen, getTotalItems } = useCart();
@@ -14,17 +15,19 @@ export const Header = () => {
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-5 w-5" />
             </Button>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              NepalThreads
-            </h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                NepalThreads
+              </h1>
+            </Link>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Home</a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Men</a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Women</a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Traditional</a>
-            <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Sale</a>
+            <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Home</Link>
+            <Link to="/men" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Men</Link>
+            <Link to="/women" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Women</Link>
+            <Link to="/traditional" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Traditional</Link>
+            <Link to="/sale" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Sale</Link>
           </nav>
 
           <div className="flex items-center space-x-4">
